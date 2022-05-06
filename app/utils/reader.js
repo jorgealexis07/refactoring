@@ -9,8 +9,7 @@ class Reader{
         return explorers;
     }
 }
-exports.data= Reader;
+module.exports= Reader;
 
-
-const user = Reader.getreadJsonFile("explorers.json");
-console.log(user);
+/* const read = Reader.getreadJsonFile("explorers.json");
+console.log(read); */

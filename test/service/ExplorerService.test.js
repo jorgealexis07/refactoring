@@ -1,14 +1,16 @@
-const ExplorerService = require("./../../lib/service/ExplorerService")
-const ReaderFile = require("./../../lib/service/ExplorerService")
-const explorers = Reader.readJsonFile("explorers.json"); 
+const ExplorerService = require("../../app/service/ExplorerService")
+const Reader = require("../../app/utils/Reader")
+
+
 
 describe("Test for Explorer service", () => {
 
     test('1. Create a new user using the ExplorerService', () => {
         //Aqui invocas el codigo que vas a usar en tu app
-        const user = ExplorerService.filterByMission(explorers,"node") 
-        expect(user.explorers).toBe(explorers)
-        expect(user.mission).toBe("node")
+        const explorers = Reader.getreadJsonFile("explorers.json"); 
+        const explorer = ExplorerService.filterByMission(explorers,"node") 
+     
+        expect(explorer.mission).toBe("node")
         
 
     } )

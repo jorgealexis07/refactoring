@@ -10,7 +10,7 @@ class ExplorerService{
     
     
 }
-exports.data = ExplorerService;
+module.exports = ExplorerService;
 
 ExplorerService.filterByMission(readExplorers,"node");
 //ExplorerService.getAmountOfExplorersByMission(explorers, "node");
