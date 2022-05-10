@@ -5,7 +5,7 @@ class ExplorerService{
     static filterByMission(readExplorers, mission){
         const explorersInNode = readExplorers.filter((explorer) => explorer.mission == mission);
         
-        return {mission: mission}
+        return explorersInNode;
     }
     static getAmountOfExplorersByMission(readExplorers, mission){
         const explorersInNode = readExplorers.filter((explorer) => explorer.mission == mission);

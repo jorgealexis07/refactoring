@@ -2,10 +2,10 @@ class FizzbuzzService{
     static applyValidationInExplorer(explorer){
 
         if(explorer === null){
-            console.log("Error es null")
-            return {error: "El payload no existe."}
+            console.log("Error es null");
+            return {error: "El payload no existe."};
         } 
-        else if(typeof explorer.name === 'string' && typeof explorer.score === 'number'){
+        else if(typeof explorer.name === "string" && typeof explorer.score === "number"){
             
             if(explorer.score%5 === 0 && explorer.score%3 === 0){
                 explorer.trick = "FIZZBUZZ";
@@ -32,9 +32,9 @@ class FizzbuzzService{
 
         }
         
-            else{
-                return {error: "Error, las propiedades del payload necesitan tener un valor válido"}
-              }
+        else{
+            return {error: "Error, las propiedades del payload necesitan tener un valor válido"};
+        }
     
     }
 }
