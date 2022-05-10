@@ -8,6 +8,12 @@ test("Return an error object when try to create a new user with a payload with i
     expect(result.error).toMatch(/necesitan tener un valor válido/)
 })
 
+test("Create a explorer by a given valid payload = 1", () =>{
+    const explorer1 = {name: "Explorer1", score: 1}
+    const result = FizzbuzzService.applyValidationInExplorer(explorer1)
+    expect(result.trick).toBe(1)
+})
+
 test("Create a explorer by a given valid payload = FIZZ", () =>{
     const explorer = {name: "Explorer3", score: 3}
     const result = FizzbuzzService.applyValidationInExplorer(explorer)
@@ -33,11 +39,4 @@ test("Create a explorer by a given valid payload = FIZZBUZZ", () =>{
 /* const explorer1 = {name: "Explorer1", score: 1}
 FizzbuzzService.applyValidationInExplorer(explorer1) // {name: "Explorer1", score: 1, trick: 1} 
 
-const explorer3 = {name: "Explorer3", score: 3}
-FizzbuzzService.applyValidationInExplorer(explorer3) // {name: "Explorer3", score: 3, trick: "FIZZ"}
-
-const explorer5 = {name: "Explorer5", score: 5}
-FizzbuzzService.applyValidationInExplorer(explorer5) // {name: "Explorer5", score: 5, trick: "BUZZ"}
-
-const explorer15 = {name: "Explorer15", score: 15}
-FizzbuzzService.applyValidationInExplorer(explorer15) // {name: "Explorer15", score: 15, trick: "FIZZBUZZ"}   */
+  */
