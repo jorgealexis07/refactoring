@@ -1,5 +1,5 @@
 const ExplorerService = require("./../../app/service/ExplorerService")
-const Reader = require("../../app/utils/Reader")
+const Reader = require("./../../app/utils/Reader")
 
 
 
