@@ -33,10 +33,3 @@ test("Create a explorer by a given valid payload = FIZZBUZZ", () =>{
 })
 
 })
-
-
-
-/* const explorer1 = {name: "Explorer1", score: 1}
-FizzbuzzService.applyValidationInExplorer(explorer1) // {name: "Explorer1", score: 1, trick: 1} 
-
-  */
