@@ -20,6 +20,11 @@ test("Create a explorer by a given valid payload = BUZZ", () =>{
     expect(result.trick).toBe("BUZZ")
 })
 
+test("Create a explorer by a given valid payload = FIZZBUZZ", () =>{
+    const explorer15 = {name: "Explorer15", score: 15}
+    const result = FizzbuzzService.applyValidationInExplorer(explorer15)
+    expect(result.trick).toBe("FIZZBUZZ")
+})
 
 })
 
