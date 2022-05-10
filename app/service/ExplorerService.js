@@ -2,10 +2,10 @@ const Reader = require("../utils/Reader");
 const readExplorers = Reader.getreadJsonFile("explorers.json");
 
 class ExplorerService{
-    
     static filterByMission(readExplorers, mission){
         const explorersInNode = readExplorers.filter((explorer) => explorer.mission == mission);
-        return explorersInNode;
+        
+        return {mission: mission}
     }
     static getAmountOfExplorersByMission(readExplorers, mission){
         const explorersInNode = readExplorers.filter((explorer) => explorer.mission == mission);
@@ -13,7 +13,7 @@ class ExplorerService{
         return cantExpl;
     }
     static getExplorersUsernamesByMission(explorers, mission){
-        const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == "node");
+        const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == mission);
         const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
         return usernamesInNode;
     }
@@ -21,6 +21,6 @@ class ExplorerService{
 }
 module.exports = ExplorerService;
 
-ExplorerService.filterByMission(readExplorers,"node");
-//ExplorerService.getAmountOfExplorersByMission(explorers, "node");
-//ExplorerService.getExplorersUsernamesByMission(explorers, "node");
+//ExplorerService.filterByMission(readExplorers,"node");
+//ExplorerService.getAmountOfExplorersByMission(readExplorers, "node");
+//ExplorerService.getExplorersUsernamesByMission(readExplorers, "node");
