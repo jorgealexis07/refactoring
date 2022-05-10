@@ -10,12 +10,16 @@ class ExplorerController{
 
     static getExplorersUsernamesByMission(mission){
         var getusernamebymission = ExplorerServ.getExplorersUsernamesByMission(read, mission);
-        return getusernamebymission
+        return getusernamebymission;
     }
 
-
+    static getExplorersAmonutByMission(mission) {
+        var getexplorersamountbymission = ExplorerServ.getAmountOfExplorersByMission(read, mission);
+        return getexplorersamountbymission;
+    }
 }
 module.exports = ExplorerController;
 
 //console.log(ExplorerController.getExplorersByMission("node"));
-console.log(ExplorerController.getExplorersUsernamesByMission("node"));
+//console.log(ExplorerController.getExplorersUsernamesByMission("node"));
+//console.log(ExplorerController.getExplorersAmonutByMission("node"));
