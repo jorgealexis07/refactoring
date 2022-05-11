@@ -31,6 +31,12 @@ app.get("/v1/fizzbuzz/:score", (request, response) => {
     response.json({score: request.params.score, trick: recivenumberforvalidationfizzbuzz});
 });
 
+app.get("/v1/explorers/stack/:stack", (request, response) => {
+    const stack = request.params.stack;
+    const explorersListUsernamesInStack = ExplorerController.getExplorersbyStack(stack);
+    response.json({stack: request.params.stack, explorers: explorersListUsernamesInStack});
+});
+
 app.listen(port, () => {
     console.log(`FizzBuzz API in localhost:${port}`);
 });
