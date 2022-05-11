@@ -1,5 +1,5 @@
 const ExplorerService = require("./../../app/service/ExplorerService");
-const Reader = require("../../app/utils/Reader");
+const Reader = require("./../../app/utils/Reader");
 
 
 
@@ -9,8 +9,11 @@ describe("Test for Explorer service", () => {
         //Aqui invocas el codigo que vas a usar en tu app
         const explorers = Reader.getreadJsonFile("explorers.json"); 
         const explorer = ExplorerService.filterByMission(explorers,"node"); 
-        expect(explorer.mission).toBe("node"); 
+        expect(explorer.length).toBe(10); 
     } );
+
+    
+    
 
 
     
