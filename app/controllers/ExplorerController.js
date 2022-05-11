@@ -22,6 +22,11 @@ class ExplorerController{
         var getvalidationfizzbuzz = FizzbuzzServ.applyValidationInNumber(num);
         return getvalidationfizzbuzz;
     }
+
+    static getExplorersbyStack(stack){
+        var getexplorersbystack = FizzbuzzServ.getExplorersUsernamesfilterByStack(read,stack);
+        return getexplorersbystack;
+    }
 }
 module.exports = ExplorerController;
 
