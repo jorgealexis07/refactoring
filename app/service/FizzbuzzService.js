@@ -15,16 +15,10 @@ class FizzbuzzService{
                 return explorer;
             }
             
-            else if (explorer.trick == explorer.score){
-                return explorer;
-            }
             else if (explorer.score%5 === 0){
                 explorer.trick = "BUZZ";
                 return explorer;
             }else if(explorer.trick = explorer.score){
-                return explorer;
-            }
-            else if (explorer.trick = explorer.score){
                 return explorer;
             }
 
@@ -35,21 +29,17 @@ class FizzbuzzService{
     }
 
     static applyValidationInNumber(number){
-        if(number === 1){
-            var result = number;
-            return result;
+        if(number%5 === 0 && number %3 === 0){
+            return "FIZZBUZZ";
         }
-        else if(number === 3){
-            var result = "FIZZ";
-            return result;
+        else if(number%3 === 0){
+            return "FIZZ";
         }
-        else if(number === 5){
-            var result = "BUZZ";
-            return result;
+        else if(number%5 === 0){
+            return "BUZZ";
         }
-        else if(number === 15){
-            var result = "FIZZBUZZ";
-            return result;
+        else {
+            return number;
         }
     }
 
