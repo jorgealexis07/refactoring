@@ -13,6 +13,11 @@ class ExplorerService{
         const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
         return usernamesInNode;
     }
+    static getExplorersUsernamesfilterByStack(readExplorers, stacks){
+        const explorersInStackToGetUsernames = readExplorers.filter((explorer) => explorer.stacks == stacks);
+        const usernamesInStack = explorersInStackToGetUsernames.map((explorer) => explorer.githubUsername);
+        return usernamesInStack;
+    }
     
 }
 module.exports = ExplorerService;
