@@ -1,10 +1,6 @@
-/* const Reader = require("./../../app/utils/Reader");
-const readExplorers = Reader.getreadJsonFile("explorers.json"); */
-
 class ExplorerService{
     static filterByMission(readExplorers, mission){
         const explorersInNode = readExplorers.filter((explorer) => explorer.mission == mission);
-        
         return explorersInNode;
     }
     static getAmountOfExplorersByMission(readExplorers, mission){
