@@ -1,5 +1,10 @@
 const TelegramBot = require("node-telegram-bot-api");
 const ExplorerController = require("./controllers/ExplorerController");
+require('dotenv').config()
+
+if(!process.env.token){
+  throw new Error('No hay configuración con Api Key y con Token')
+}
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = "";
