@@ -24,7 +24,7 @@ class ExplorerController{
     }
 
     static getExplorersbyStack(stack){
-        var getexplorersbystack = FizzbuzzServ.getExplorersUsernamesfilterByStack(read,stack);
+        var getexplorersbystack = ExplorerServ.getExplorersUsernamesfilterByStack(read,stack);
         return getexplorersbystack;
     }
 }
