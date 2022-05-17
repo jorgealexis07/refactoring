@@ -1,13 +1,13 @@
+const { response } = require("express");
 const TelegramBot = require("node-telegram-bot-api");
 const ExplorerController = require("./controllers/ExplorerController");
 require('dotenv').config()
 
-if(!process.env.token){
-  throw new Error('No hay configuración con Api Key y con Token')
-}
+
+
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = "";
+const token = "5125117136:AAEJz_-lbIvu7mKtKac-KtB1tNwfUfaMjnA";
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
@@ -30,13 +30,18 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 bot.on("message", (msg) => {
     const chatId = msg.chat.id;
     const numberToApplyFb = parseInt(msg.text);
-
-    if(!isNaN(numberToApplyFb)){
-        const fizzbuzzTrick = ExplorerController.applyFizzbuzz(numberToApplyFb);
+    const mission =String(msg.text).toLowerCase(); 
+     if(!isNaN(numberToApplyFb)){
+        const fizzbuzzTrick = ExplorerController.getValidationFizzBuzz(numberToApplyFb);
         const responseBot = `Tu número es: ${numberToApplyFb}. Validación: ${fizzbuzzTrick}`;
         bot.sendMessage(chatId, responseBot);
-    } else {
-        bot.sendMessage(chatId, "Envía un número válido");
+    }else  if(mission == "node" || mission == "java" ){
+        const listExp =String(ExplorerController.getExplorersUsernamesByMission(mission)) ;
+        const responseBot = `Missión: ${mission}. Lista explorers: ${listExp}`;
+        bot.sendMessage(chatId, responseBot);
+    } 
+    else {
+        bot.sendMessage(chatId, "Envía un valor válido");
     }
-
 });
+
